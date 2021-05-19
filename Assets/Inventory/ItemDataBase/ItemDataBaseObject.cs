@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "New Item Database", menuName = "Inventory System/Items/Database")]
+public class ItemDataBaseObject : ScriptableObject, ISerializationCallbackReceiver
+{
+    public ItemObject[] Items;
+    public Dictionary<int, ItemObject> GetItemObject = new Dictionary<int, ItemObject>();
+
+    public void OnAfterDeserialize()
+    {
+        for (int i = 0; i < Items.Length; i++)
+        {
+            Items[i].Id = i;
+            GetItemObject.Add(i, Items[i]);
+        }
+    }
+    public void OnBeforeSerialize()
+    {
+        GetItemObject = new Dictionary<int, ItemObject>();
+    }
+}
+
+

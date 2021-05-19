@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6e58b56cf584d0d804d724286e08cb, type: 3}
+  m_Name: CommonHelemt
+  m_EditorClassIdentifier: 
+  Id: 9
+  itemPriceInJustMoney: 10
+  uiDisplay: {fileID: -3727229978343636486, guid: e2de69ff0229340bb953b322876a56c9, type: 3}
+  type: 7
+  description: Common helemt.
+  buffs:
+  - attribute: 2
+    value: 128
