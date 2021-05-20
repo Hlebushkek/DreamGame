@@ -55,6 +55,8 @@
      <Compile Include="Assets\Inventory\InventorySelectCell.cs" />
      <Compile Include="Assets\Inventory\Script\AllowedItemType.cs" />
      <Compile Include="Assets\Inventory\CropDataBase.cs" />
+     <Compile Include="Assets\SortingLayerScript.cs" />
+     <Compile Include="Assets\CursorController.cs" />
      <Compile Include="Assets\ShopScript\BuyScript.cs" />
      <Compile Include="Assets\Inventory\InventoryUse.cs" />
      <Compile Include="Assets\Sprite Script\HeroAttackScript.cs" />
@@ -71,7 +73,6 @@
      <Compile Include="Assets\IntroScript\StarGenerator.cs" />
      <Compile Include="Assets\Script\CropGrow.cs" />
      <Compile Include="Assets\Script\GridSetup.cs" />
-     <Compile Include="Assets\SortingLayerScript.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

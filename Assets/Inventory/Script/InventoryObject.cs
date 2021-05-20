@@ -51,7 +51,7 @@ public class InventoryObject : ScriptableObject
     }
 
     [ContextMenu("Save")]
-    public void Save()
+    public void Save(string _savePath)
     {
         /*string saveData = JsonUtility.ToJson(this, true);
         BinaryFormatter BF = new BinaryFormatter();
@@ -59,28 +59,30 @@ public class InventoryObject : ScriptableObject
         BF.Serialize(dataFile, saveData);
         dataFile.Close();*/
         IFormatter formatter = new BinaryFormatter();
-        Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
-        Debug.Log(string.Concat(Application.persistentDataPath, savePath));
-        formatter.Serialize(stream, Container);
-        stream.Close();
+        Debug.Log(Application.persistentDataPath + _savePath);
+        FileStream file = File.Create(string.Concat(Application.persistentDataPath, _savePath));
+        //Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
+        formatter.Serialize(file, Container);
+        file.Close();
     }
     [ContextMenu("Load")]
-    public void Load()
+    public void Load(string _savePath)
     {
-        if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+        if (File.Exists(Application.persistentDataPath + _savePath))
         {
             /*BinaryFormatter BF = new BinaryFormatter();
             FileStream dataFile = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
             JsonUtility.FromJsonOverwrite(BF.Deserialize(dataFile).ToString(), this);
             dataFile.Close();*/
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
-            Inventory newContainer = (Inventory)formatter.Deserialize(stream);
+            Debug.Log(Application.persistentDataPath + _savePath);
+            FileStream file = File.OpenRead(string.Concat(Application.persistentDataPath, _savePath));
+            Inventory newContainer = (Inventory)formatter.Deserialize(file);
             for (int i = 0; i < Container.Items.Length; i++)
             {
                 Container.Items[i].UpdateSlot(newContainer.Items[i].item, newContainer.Items[i].amount, newContainer.Items[i].id);
             }
-            stream.Close();
+            file.Close();
         }
     }
     [ContextMenu("Clear")]

@@ -54,14 +54,13 @@ public class TileMapScript : MonoBehaviour
     public bool PlantSeed(Item item)
     {
         grid.GetXY(GetMouseWorldPosition(Input.mousePosition, Camera.main), out x, out y);
-        if(Mathf.Abs(GetMouseWorldPosition(Input.mousePosition, Camera.main).x - Girl.transform.position.x) < 2 && Mathf.Abs(GetMouseWorldPosition(Input.mousePosition, Camera.main).y - Girl.transform.position.y) < 2)
+        if(Mathf.Abs(GetMouseWorldPosition(Input.mousePosition, Camera.main).x - Girl.transform.position.x) < 2 && Mathf.Abs(GetMouseWorldPosition(Input.mousePosition, Camera.main).y - Girl.transform.position.y) < 2 && grid.GetValue(x, y) == 1)
         {
             Girl.SendMessage("HoeAnimStart");
             SetPlant(item);
             Invoke("SetMessageAnimEnd", 1.5f);
             return true;
-        }
-        return false;
+        } else return false;
     }
     private void SetGround()
     {
@@ -69,16 +68,13 @@ public class TileMapScript : MonoBehaviour
     }
     private void SetPlant(Item item)
     {
-        if(grid.GetValue(x, y) == 1)
-        {
-            //Debug.Log("Plant seed with ID = " + item.Id);
-            //Debug.Log("Item name = " + item.Name);
-            //Debug.Log("Name of obj " + cropDataBase.GetCropObject[item.Id].name);
-            GameObject newPlant = Instantiate(cropDataBase.GetCropObject[item.Id], new Vector3(x + gridOrigin.x + 0.5f, y + gridOrigin.y + 0.75f, -1.75f), Quaternion.identity) as GameObject;
-            newPlant.transform.SetParent(this.transform);
-            grid.SetValue(x, y, 2);
-            CoordToPlant.Add(new Vector2Int(x, y), newPlant);
-        }
+        //Debug.Log("Plant seed with ID = " + item.Id);
+        //Debug.Log("Item name = " + item.Name);
+        //Debug.Log("Name of obj " + cropDataBase.GetCropObject[item.Id].name);
+        GameObject newPlant = Instantiate(cropDataBase.GetCropObject[item.Id], new Vector3(x + gridOrigin.x + 0.5f, y + gridOrigin.y + 0.75f, 0), Quaternion.identity) as GameObject;
+        newPlant.transform.SetParent(this.transform, false);
+        grid.SetValue(x, y, 2);
+        CoordToPlant.Add(new Vector2Int(x, y), newPlant);
     }
     private bool IsPlantGrow(Vector2Int coord)
     {

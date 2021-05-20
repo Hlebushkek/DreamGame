@@ -20,12 +20,12 @@ public class PlayerInventoryScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             Debug.Log("Save");
-            inventory.Save();
+            inventory.Save("/Inventory.save");
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("Load");
-            inventory.Load();
+            inventory.Load("/Inventory.save");
         }
     }
     private void OnApplicationQuit()

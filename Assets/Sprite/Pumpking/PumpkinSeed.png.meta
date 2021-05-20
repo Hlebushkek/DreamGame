@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 5638373844555124507
     second: PumpkinSeed_4
+  - first:
+      213: -1145155846696413171
+    second: PumpkinSeed_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,7 +115,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 32
-        height: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,7 +136,7 @@ TextureImporter:
         x: 32
         y: 0
         width: 32
-        height: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,7 +157,7 @@ TextureImporter:
         x: 64
         y: 0
         width: 32
-        height: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,7 +178,7 @@ TextureImporter:
         x: 96
         y: 0
         width: 32
-        height: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,7 +199,7 @@ TextureImporter:
         x: 128
         y: 0
         width: 32
-        height: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,6 +209,27 @@ TextureImporter:
       bones: []
       spriteID: b1fcf8363278f3e40800000000000000
       internalID: 5638373844555124507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PumpkinSeed_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08d23123d69b10f0800000000000000
+      internalID: -1145155846696413171
       vertices: []
       indices: 
       edges: []

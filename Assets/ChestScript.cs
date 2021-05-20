@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ChestScript : MonoBehaviour
 {
+    [SerializeField] private static int chestAmountInGame = 0;
     MouseItem mouseItem = new MouseItem();
     [SerializeField] private InventoryObject chestInv;
     [SerializeField] private GameObject Player;
@@ -16,6 +17,7 @@ public class ChestScript : MonoBehaviour
     [SerializeField] private GameObject inventorySlotPrefab;
     [SerializeField] private Transform ChestPanel;
     [SerializeField] private Transform PlayerInvPanel;
+    private string ChestName;
     private Dictionary<GameObject, InventorySlot> chestDisplay = new Dictionary<GameObject, InventorySlot>();
     private Dictionary<GameObject, InventorySlot> itemsDisplay = new Dictionary<GameObject, InventorySlot>();
     private void Start()
@@ -28,6 +30,9 @@ public class ChestScript : MonoBehaviour
         CreateItemSlots();
         UpdateSlots();
         ChestCanvas.SetActive(false);
+        chestAmountInGame += 1;
+        ChestName = "/Chest" + chestAmountInGame + ".save";
+        Debug.Log(chestAmountInGame + "   " + ChestName);
     }
     private void Update()
     {
@@ -43,11 +48,23 @@ public class ChestScript : MonoBehaviour
         Debug.Log("clicked");
         ChestCanvas.SetActive(true);
         PlayerInventory.SetActive(false);
+        LoadChestInv();
     }
     public void CloseChestInv()
     {
         ChestCanvas.SetActive(false);
         PlayerInventory.SetActive(true);
+        SaveChestInv();
+    }
+    public void SaveChestInv() //Make it
+    {
+        Debug.Log("Save");
+        chestInv.Save("/ChestSaves/" + ChestName);
+    }
+    public void LoadChestInv() //Make it
+    {
+        Debug.Log("Load");
+        chestInv.Load("/ChestSaves/" + ChestName);
     }
     private void CreateItemSlots()
     {

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class InventorySelectCell : MonoBehaviour
 {
-    int key;
+    int key = 1;
     public InventoryDisplay inventoryd;
+    private float deltaToChange = 1f;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -39,9 +40,19 @@ public class InventorySelectCell : MonoBehaviour
         {
             HighLightInventoryCell(8);
         }
+        if (Input.mouseScrollDelta.y > deltaToChange)
+        {
+            HighLightInventoryCell(key - 1);
+        }
+        if (Input.mouseScrollDelta.y < -deltaToChange)
+        {
+            HighLightInventoryCell(key + 1);
+        }
     }
     private void HighLightInventoryCell(int _key)
     {
+        if (_key < 1 || _key > 8) return;
+        key = _key;
         inventoryd.HighlightCell(_key - 1);
     }
 }

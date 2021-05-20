@@ -316,7 +316,6 @@ public class InventoryDisplay : MonoBehaviour
         mouseObject.transform.SetParent(transform.parent);
         if (itemsDisplay.ContainsKey(obj) && itemsDisplay[obj].id >= 1)
         {
-            Debug.Log("is not default item");
             var img = mouseObject.AddComponent<Image>();
             img.sprite = inventory.database.GetItemObject[itemsDisplay[obj].id].uiDisplay;
             img.raycastTarget = false;
@@ -325,7 +324,6 @@ public class InventoryDisplay : MonoBehaviour
         }
         else if (equipmentDisplay.ContainsKey(obj) && equipmentDisplay[obj].id >= 1)
         {
-            Debug.Log("is not default item");
             var img = mouseObject.AddComponent<Image>();
             img.sprite = equipmentInv.database.GetItemObject[equipmentDisplay[obj].id].uiDisplay;
             img.raycastTarget = false;
