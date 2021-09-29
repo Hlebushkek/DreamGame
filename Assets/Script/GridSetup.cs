@@ -78,7 +78,6 @@ public class GridSetup
                 if (gridArray[x, y] > 0 && gridArray[x, y] < 6)
                 {
                     gridArray[x, y] ++;
-                    
                 }
             }
         }

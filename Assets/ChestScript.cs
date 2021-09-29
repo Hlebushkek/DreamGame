@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ChestScript : MonoBehaviour
 {
-    [SerializeField] private static int chestAmountInGame = 0;
+    [SerializeField] private static int chestAmountInGame;
     MouseItem mouseItem = new MouseItem();
     [SerializeField] private InventoryObject chestInv;
     [SerializeField] private GameObject Player;
@@ -20,6 +20,10 @@ public class ChestScript : MonoBehaviour
     private string ChestName;
     private Dictionary<GameObject, InventorySlot> chestDisplay = new Dictionary<GameObject, InventorySlot>();
     private Dictionary<GameObject, InventorySlot> itemsDisplay = new Dictionary<GameObject, InventorySlot>();
+    private void Awake()
+    {
+        chestAmountInGame = 0;
+    }
     private void Start()
     {
         chestInv = ScriptableObject.CreateInstance<InventoryObject>();
@@ -30,6 +34,7 @@ public class ChestScript : MonoBehaviour
         CreateItemSlots();
         UpdateSlots();
         ChestCanvas.SetActive(false);
+
         chestAmountInGame += 1;
         ChestName = "/Chest" + chestAmountInGame + ".save";
         Debug.Log(chestAmountInGame + "   " + ChestName);
@@ -58,12 +63,12 @@ public class ChestScript : MonoBehaviour
     }
     public void SaveChestInv() //Make it
     {
-        Debug.Log("Save");
+        //Debug.Log("Save");
         chestInv.Save("/ChestSaves/" + ChestName);
     }
     public void LoadChestInv() //Make it
     {
-        Debug.Log("Load");
+        //Debug.Log("Load");
         chestInv.Load("/ChestSaves/" + ChestName);
     }
     private void CreateItemSlots()

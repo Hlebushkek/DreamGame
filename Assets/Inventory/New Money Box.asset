@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27991266d13e64f17924ceefd02bcbe3, type: 3}
   m_Name: New Money Box
   m_EditorClassIdentifier: 
-  moneyAmount: 100
+  moneyAmount: 130

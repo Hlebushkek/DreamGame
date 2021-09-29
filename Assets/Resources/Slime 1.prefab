@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2998671646491391297}
   - component: {fileID: 2998671646491391296}
   - component: {fileID: 2998671646491391299}
-  - component: {fileID: 2998671646491391298}
+  - component: {fileID: 8180824410907398033}
   - component: {fileID: 2998671646491391301}
+  - component: {fileID: 1002803034650291942}
   m_Layer: 3
   m_Name: Slime 1
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2998671646491391300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.237, y: -0.9, z: 0}
-  m_LocalScale: {x: 0.35590878, y: 0.5317105, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.5, z: 1}
   m_Children:
   - {fileID: 2998671647269661669}
   - {fileID: 2998671646798666482}
@@ -109,8 +110,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &2998671646491391298
-BoxCollider2D:
+--- !u!70 &8180824410907398033
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -122,19 +123,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012338877, y: -0.39196157}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 2}
-    newSize: {x: 0.64, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.7013655, y: 1.20842}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 3.8, y: 2}
+  m_Direction: 1
 --- !u!114 &2998671646491391301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,9 +149,27 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  alive: {fileID: 2998671646491391300}
-  aliveRb: {fileID: 2998671646491391299}
+  EnemyReference: {fileID: 2998671646491391300}
   DropMoonStone: {fileID: 4959805704703940178, guid: 2d05ce78a6302486faba51549f357f35, type: 3}
+--- !u!95 &1002803034650291942
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998671646491391300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a015794d29de4e7f87c0a30959bd8a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2998671646798666485
 GameObject:
   m_ObjectHideFlags: 0

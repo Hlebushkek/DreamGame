@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class InventoryUse : MonoBehaviour
 {
-    public InventoryDisplay invD;
-    public TileMapScript tms;
-    int CurrentlySelectedCell = 0;
+    [SerializeField] private InventoryDisplay invD;
+    [SerializeField] private TileMapScript tms;
+    [SerializeField] private GunDataBase gunData;
+    private int CurrentlySelectedCell = 0;
     private float cooldownTimer = 0f;
     private void Start()
     {
@@ -42,8 +43,8 @@ public class InventoryUse : MonoBehaviour
                     invD.inventory.Container.Items[i].ReduceAmount(1);
                 return 1.75f;
             case ItemType.Gun:
-                //Instantiate shot;
-                break;
+                Debug.Log("Gun");
+                return 0.5f;
             default:
                 Debug.Log("Default case");
                 break;

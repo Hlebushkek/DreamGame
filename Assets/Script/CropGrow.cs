@@ -25,4 +25,5 @@ public class CropGrow : MonoBehaviour
         PlayerInventory.AddItem(new Item(productionItem), amount);
     }
     public bool IsCropGrow() {return state == CropState.Length - 1;}
+    public int GetCropState() {return state;}
 }

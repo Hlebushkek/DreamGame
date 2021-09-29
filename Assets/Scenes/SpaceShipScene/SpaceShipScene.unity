@@ -8271,6 +8271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invD: {fileID: 733649646}
   tms: {fileID: 1806641146}
+  gunData: {fileID: 11400000, guid: ec3ac2a054e3243108a69409c93d4d59, type: 2}
 --- !u!4 &1435389657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4476307684548626148, guid: e9de4b11769f04c9aa5833afe145cf10, type: 3}
@@ -8289,19 +8290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryd: {fileID: 733649646}
---- !u!114 &1435389661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435389650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a498d626c43db40bb8e64d99531a4e93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortingOrderBase: 5000
 --- !u!1 &1487139448
 GameObject:
   m_ObjectHideFlags: 0

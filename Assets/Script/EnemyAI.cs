@@ -11,28 +11,25 @@ public class EnemyAI : MonoBehaviour
         Death
     }
     private EnemyStates currentState;
-    private bool groundDetected, wallDetected;
+    private RaycastHit2D groundDetected, wallDetected;
     [SerializeField]
     private float groundCheckDistance, wallCheckDistance;
     [SerializeField]
-    private float movementSpeed = 3.0f, maxhealth, currentHealth, knockbackStartTime;
+    private float movementSpeed = 3.0f, maxhealth, currentHealth, knockbackAnimLength = 0.5f;
+    private float knockbackStartTime;
     private Vector2 movement, knockbackSpeed;
     private int facingDirection, damageDirection;
 
-    [SerializeField]
-    private Transform groundCheck, wallCheck;
-    [SerializeField]
-    private LayerMask whatIsGround;
-    [SerializeField]
+    [SerializeField] private Transform groundCheck, wallCheck;
+    [SerializeField] private LayerMask whatIsGround;
     private GameObject alive;
-    [SerializeField]
     private Rigidbody2D aliveRb;
     private Animator aliveAnim;
-    private UnityEngine.Object EnemyReference;
-    [SerializeField]
-    private GameObject DropMoonStone;
+    [SerializeField] private UnityEngine.Object EnemyReference;
+    [SerializeField] private GameObject DropMoonStone;
     private void Start()
     {
+        alive = this.gameObject;
         aliveRb = alive.GetComponent<Rigidbody2D>();
         facingDirection = 1;
         aliveAnim = alive.GetComponent<Animator>();
@@ -66,11 +63,12 @@ public class EnemyAI : MonoBehaviour
         if (!groundDetected || wallDetected)
         {
             Flip();
-        } else
+        }
+        else
         {
             movement.Set(movementSpeed * facingDirection, aliveRb.velocity.y);
             aliveRb.velocity = movement;
-        };
+        }
     }
     private void ExitWalkingState()
     {
@@ -86,7 +84,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void UpdateKnockBackState()
     {
-        if (Time.time >= knockbackStartTime + damageDirection)
+        if (Time.time >= knockbackStartTime + knockbackAnimLength)
         {
             SwitchState(EnemyStates.Walking);
         }
@@ -130,7 +128,6 @@ public class EnemyAI : MonoBehaviour
     {
         facingDirection *= -1;
         alive.transform.Rotate(0.0f, 180.0f, 0.0f);
-
     }
     private void SwitchState(EnemyStates state)
     {
@@ -138,6 +135,9 @@ public class EnemyAI : MonoBehaviour
         {
             case EnemyStates.Walking:
                 ExitWalkingState();
+                break;
+            case EnemyStates.Knockback:
+                ExitKnockBackState();
                 break;
             case EnemyStates.Death:
                 ExitDeadState();
@@ -147,6 +147,9 @@ public class EnemyAI : MonoBehaviour
         {
             case EnemyStates.Walking:
                 EnterWalkingState();
+                break;
+            case EnemyStates.Knockback:
+                EnterKnockBackState();
                 break;
             case EnemyStates.Death:
                 EnterDeadState();
@@ -161,6 +164,7 @@ public class EnemyAI : MonoBehaviour
     }
     public void TakeDamage(float amountDamage)
     {
+        Debug.Log("takeDamage");
         currentHealth -= amountDamage;
         if (currentHealth > 0.0f)
         {
@@ -184,6 +188,22 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log("Instantiate ore");
             GameObject obj = Instantiate(DropMoonStone, transform.position, Quaternion.identity);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag != "Map")
+        {
+            Debug.Log("On");
+            Physics2D.IgnoreCollision(other.collider, this.GetComponent<Collider2D>());
+        }
+    }
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag != "Map")
+        {
+            Debug.Log("Off");
+            //Physics2D.IgnoreCollision(other.collider, this.GetComponent<Collider2D>(), false);
         }
     }
 }

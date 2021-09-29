@@ -59,7 +59,7 @@ public class InventoryObject : ScriptableObject
         BF.Serialize(dataFile, saveData);
         dataFile.Close();*/
         IFormatter formatter = new BinaryFormatter();
-        Debug.Log(Application.persistentDataPath + _savePath);
+        //Debug.Log(Application.persistentDataPath + _savePath);
         FileStream file = File.Create(string.Concat(Application.persistentDataPath, _savePath));
         //Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
         formatter.Serialize(file, Container);
@@ -75,7 +75,7 @@ public class InventoryObject : ScriptableObject
             JsonUtility.FromJsonOverwrite(BF.Deserialize(dataFile).ToString(), this);
             dataFile.Close();*/
             IFormatter formatter = new BinaryFormatter();
-            Debug.Log(Application.persistentDataPath + _savePath);
+            //Debug.Log(Application.persistentDataPath + _savePath);
             FileStream file = File.OpenRead(string.Concat(Application.persistentDataPath, _savePath));
             Inventory newContainer = (Inventory)formatter.Deserialize(file);
             for (int i = 0; i < Container.Items.Length; i++)

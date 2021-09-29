@@ -9,6 +9,7 @@ TagManager:
   - HealthPotion
   - Item
   - CropObject
+  - Map
   layers:
   - Default
   - TransparentFX

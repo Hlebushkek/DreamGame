@@ -19,7 +19,7 @@ MonoBehaviour:
   description: Common gun. Each shot deal 5 damage.
   buffs:
   - attribute: 0
-    value: 5
+    value: 2.5
   - attribute: 1
     value: 0.5
   - attribute: 2

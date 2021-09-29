@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6692040829564774067}
   - component: {fileID: 6692040829564774064}
   - component: {fileID: 6771217988877502844}
-  - component: {fileID: 1632841084941745452}
   - component: {fileID: 7980115931354751190}
+  - component: {fileID: -8579509052675083409}
   m_Layer: 0
   m_Name: WheatCrop
   m_TagString: CropObject
@@ -108,19 +108,6 @@ MonoBehaviour:
   - {fileID: 1179830255754978751, guid: 2bc0cd15278c24a779a1867d8a2851b5, type: 3}
   - {fileID: -7987664122950591569, guid: 2bc0cd15278c24a779a1867d8a2851b5, type: 3}
   - {fileID: 3651653612881715753, guid: 2bc0cd15278c24a779a1867d8a2851b5, type: 3}
---- !u!114 &1632841084941745452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6692040829564774065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a498d626c43db40bb8e64d99531a4e93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortingOrderBase: 5000
 --- !u!61 &7980115931354751190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,3 +134,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &-8579509052675083409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6692040829564774065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338c4e27101c44ba2ad735f7c4b1d9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortingOrderBase: 5000

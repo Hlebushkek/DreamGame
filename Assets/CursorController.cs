@@ -41,7 +41,7 @@ public class CursorController : MonoBehaviour
                     Cursor.SetCursor(mouseOnReadyCrop, Vector2.zero, CursorMode.ForceSoftware);
                 }
             }
-            else if (hit.collider.gameObject.tag == "Player")
+            else if (hit.collider.gameObject.tag == "NPC")
             {
                 if (currentCursor != CursorType.OnNPC)
                 {
