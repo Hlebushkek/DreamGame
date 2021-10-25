@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ChestScript : MonoBehaviour
 {
     [SerializeField] private static int chestAmountInGame;
-    MouseItem mouseItem = new MouseItem();
+    private MouseItem mouseItem = new MouseItem();
     [SerializeField] private InventoryObject chestInv;
     [SerializeField] private GameObject Player;
     [SerializeField] private InventoryObject playerInv;

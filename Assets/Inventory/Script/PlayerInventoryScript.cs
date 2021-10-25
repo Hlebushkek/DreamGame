@@ -30,7 +30,7 @@ public class PlayerInventoryScript : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        inventory.Container.Items = new InventorySlot[24];
-        equipmentInventory.Container.Items = new InventorySlot[10];
+        inventory.Clear();
+        equipmentInventory.Clear();
     }
 }
