@@ -7987,7 +7987,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47548c2959c1c4fcf8028dd87f5225c5, type: 2}
   - {fileID: 11400000, guid: eac019440acdf49519cc6e15690d1a0c, type: 2}
   itemPrice: 05000000080000000a0000000a000000020000001400000010000000140000000f000000
-  playerInventory: {fileID: 11400000, guid: fd0049dfd9aca4489a3bab7b2a288c9d, type: 2}
+  playerInventory: {fileID: 0}
   Shop_BuyPanel: {fileID: 5429044825416647339, guid: 0dca73d49c2b44ac986fd3fa638b6461, type: 3}
   SellInventory: {fileID: 7171404809003883393, guid: c1f6617d5db734cc8adbf06d195325d6, type: 3}
   ScrollaleContent: {fileID: 1937204710}
@@ -12975,7 +12975,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.6911111, y: 1}
+    m_SensorSize: {x: 1.6071428, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13727,6 +13727,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -6
       objectReference: {fileID: 0}
+    - target: {fileID: 1722249460026726572, guid: d827bfaf810c340009fe93daa5ae53a8, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 11400000, guid: fd0049dfd9aca4489a3bab7b2a288c9d, type: 2}
     - target: {fileID: 1815016425778509897, guid: d827bfaf810c340009fe93daa5ae53a8, type: 3}
       propertyPath: canv
       value: 
