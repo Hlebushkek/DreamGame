@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\MainCharacterScript\HeroAttackScript.cs" />
      <Compile Include="Assets\Scripts\UIScripts\FontScript.cs" />
      <Compile Include="Assets\Scripts\InventoryScripts\PlayerInventoryScript.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\Date.cs" />
      <Compile Include="Assets\Scripts\ItemScripts\ItemObject.cs" />
      <Compile Include="Assets\Scripts\PlayerControllScripts\TopDawnCharacterMovement.cs" />
      <Compile Include="Assets\Scripts\MapScripts\GoToMoonScript.cs" />
@@ -78,7 +79,6 @@
      <Compile Include="Assets\Scripts\IntroScript\StarGenerator.cs" />
      <Compile Include="Assets\Scripts\CropScripts\CropGrow.cs" />
      <Compile Include="Assets\Scripts\MapScripts\GridSetup.cs" />
-     <Compile Include="Assets\Scripts\UIScripts\Date.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
